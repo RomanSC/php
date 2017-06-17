@@ -3,15 +3,21 @@
 /* echo "Hello world!"; */
 
 // Testing classes
+class Foo {
+    public $a_var = "Bar";
 
+    function fun() {
+        print "$a_var \n";
+    }
+}
 
 // Hello world function
 function HelloWorld() {
-    echo " Hello world!";
-    echo "\n This is testing php!";
+    print "Hello world! \n";
+    /* print "This is testing php! \n"; */
 }
-
-HelloWorld();
+// To execute
+/* HelloWorld(); */
 
 function add_ns($a, $b){
     return $a + $b;
@@ -21,27 +27,39 @@ function add_ns($a, $b){
 }
 
 // Testing a custom sum function
-function sum_thing($array) {
-    $total = 0
-    foreach ($array as &$val) {
+function sum_thing($arr) {
+    $total = 0;
+    foreach ($arr as $val) {
         $total += $val;
     }
 
     return $total;
 }
 
-// Main function
+function print_array($arr) {
+    foreach ($arr as $val) {
+        print "$val \n";
+    }
+}
+
+// Main function (tests)
 function main() {
-    echo "\n Starting main... ";
+    print "Starting main... \n";
 
     $result = add_ns(2, 2);
-    echo "\n $result";
+    print "$result \n";
 
-    $numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    list($1, $2, $3, $4, $5, $6. $7, $8, $9, $10) = $numbers;
+    $numbers = array(2, 2);
+
+    print_array($numbers);
 
     $result = sum_thing($numbers);
-    echo "\n $result";
+    print "$result \n";
+
+    // New class instance
+    // TODO: This is broken??
+    /* $instance = Foo; */
+    /* $instance -> {fun()}; */
 }
 
 main();
